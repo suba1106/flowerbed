@@ -1,0 +1,155 @@
+@import url("https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css");
+
+/* Header */
+header {
+  background: #2d6a4f;
+  padding: 1rem 2rem;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-left img {
+  height: 40px;
+  width: 40px;
+}
+
+.header-left h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.header-right a {
+  color: #d8f3dc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.header-right a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.flower-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.flower-card {
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: var(--pico-border-radius);
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: box-shadow 0.2s;
+  background: var(--pico-card-background-color);
+}
+
+.flower-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+}
+
+.flower-card .emoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.flower-card h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+}
+
+.flower-card .meta {
+  font-size: 0.85rem;
+  color: var(--pico-muted-color);
+  margin: 0 0 0.6rem;
+}
+
+.flower-card p {
+  font-size: 0.9rem;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.detail-back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.detail-hero {
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.detail-page h2 {
+  margin: 0 0 0.25rem;
+  font-size: 2rem;
+}
+
+.detail-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem 1.5rem;
+  margin: 1.25rem 0;
+  padding: 1.25rem;
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: var(--pico-border-radius);
+  background: var(--pico-card-background-color);
+}
+
+.detail-meta dt {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--pico-muted-color);
+  margin-bottom: 0.15rem;
+}
+
+.detail-meta dd {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.detail-description {
+  line-height: 1.75;
+}
+
+/* 404 page */
+.not-found {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.not-found .emoji {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
