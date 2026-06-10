@@ -33,7 +33,7 @@ const renderFlowers = async () => {
             const link = document.createElement('a')
             link.textContent = 'Read More >'
             link.setAttribute('role', 'button')
-            link.href = `/flower.html?slug=${flower.slug}`
+            link.href = `/flowers/${flower.slug}`
             bottomContainer.appendChild(link)
 
             card.appendChild(topContainer)
