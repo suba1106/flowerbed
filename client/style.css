@@ -1,8 +1,8 @@
 @import url("https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css");
 
-/* Header */
+/* ── Header ── */
 header {
-  background: #2d6a4f;
+  background-color: #2d6a4f;
   padding: 1rem 2rem;
 }
 
@@ -41,115 +41,136 @@ header {
   text-decoration: underline;
 }
 
+/* ── Page layout ── */
 main {
   max-width: 1100px;
   margin: 2rem auto;
   padding: 0 1.5rem;
 }
 
-.flower-grid {
+/* ── Card grid (index page) ── */
+#main-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
-  margin-top: 1.5rem;
 }
 
-.flower-card {
-  border: 1px solid var(--pico-muted-border-color);
-  border-radius: var(--pico-border-radius);
-  padding: 1.25rem;
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  transition: box-shadow 0.2s;
-  background: var(--pico-card-background-color);
-}
-
-.flower-card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  text-decoration: none;
-}
-
-.flower-card .emoji {
-  font-size: 3rem;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.flower-card h2 {
-  margin: 0 0 0.25rem;
-  font-size: 1.2rem;
-}
-
-.flower-card .meta {
-  font-size: 0.85rem;
-  color: var(--pico-muted-color);
-  margin: 0 0 0.6rem;
-}
-
-.flower-card p {
-  font-size: 0.9rem;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+.card {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
   overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 
-.detail-back {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
 }
 
-.detail-hero {
-  font-size: 5rem;
+.top-container {
+  background: linear-gradient(135deg, #2d6a4f, #52b788);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+}
+
+.top-container p {
+  font-size: 4rem;
+  margin: 0;
   line-height: 1;
-  margin-bottom: 0.5rem;
 }
 
-.detail-page h2 {
-  margin: 0 0 0.25rem;
-  font-size: 2rem;
+.bottom-container {
+  padding: 1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
-.detail-meta {
+.bottom-container h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #1a1a2e;
+}
+
+.bottom-container p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #555;
+}
+
+.bottom-container a {
+  margin-top: 0.75rem;
+  display: inline-block;
+  background: #2d6a4f;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: fit-content;
+  transition: background 0.2s;
+}
+
+.bottom-container a:hover {
+  background: #52b788;
+}
+
+/* ── Flower detail page ── */
+.flower-info {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 0.75rem 1.5rem;
-  margin: 1.25rem 0;
-  padding: 1.25rem;
-  border: 1px solid var(--pico-muted-border-color);
-  border-radius: var(--pico-border-radius);
-  background: var(--pico-card-background-color);
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;
+  max-width: 900px;
 }
 
-.detail-meta dt {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--pico-muted-color);
-  margin-bottom: 0.15rem;
+@media (max-width: 640px) {
+  .flower-info {
+    grid-template-columns: 1fr;
+  }
 }
 
-.detail-meta dd {
+.image-container {
+  background: linear-gradient(135deg, #2d6a4f, #52b788);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.image-container #emoji {
+  font-size: 6rem;
+  margin: 0;
+  line-height: 1;
+}
+
+.flower-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.flower-details h2 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  color: #1a1a2e;
+}
+
+.flower-details p {
   margin: 0;
   font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
 }
 
-.detail-description {
+#description {
+  margin-top: 0.5rem;
+  color: #555;
   line-height: 1.75;
-}
-
-/* 404 page */
-.not-found {
-  text-align: center;
-  padding: 4rem 0;
-}
-
-.not-found .emoji {
-  font-size: 4rem;
-  display: block;
-  margin-bottom: 1rem;
 }
