@@ -33,7 +33,7 @@ const renderFlowers = async () => {
             const link = document.createElement('a')
             link.textContent = 'Read More >'
             link.setAttribute('role', 'button')
-            link.href = `/flowers/${flower.slug}`
+            link.href = `/flower.html?slug=${flower.slug}`
             bottomContainer.appendChild(link)
 
             card.appendChild(topContainer)
@@ -49,10 +49,4 @@ const renderFlowers = async () => {
     }
 }
 
-const requestedUrl = window.location.href.split('/').pop()
-if (requestedUrl) {
-  window.location.href = '../404.html'
-}
-else {
-    renderFlowers()
-}
+renderFlowers()
