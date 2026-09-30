@@ -1,4 +1,4 @@
-const flower = async () => {
+const renderFlower = async () => {
     const requestedSlug = new URLSearchParams(window.location.search).get('slug')
     const response = await fetch('/flowers')
     const data = await response.json()
@@ -28,4 +28,4 @@ const flower = async () => {
     }
 }
 
-flower()
+renderFlower()
