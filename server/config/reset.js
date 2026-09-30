@@ -1,8 +1,8 @@
-import pool from './database.js'
+import {pool} from './database.js'
 import './dotenv.js'
 import flowers from '../data/flowers.js'
 
-const createGiftsTable = async () => {
+const createFlowersTable = async () => {
     const createTableQuery = `
     DROP TABLE IF EXISTS flowers;
 
@@ -29,7 +29,7 @@ try {
 const seedFlowersTable = async () => {
     await createFlowersTable()
 
-    flowers.forEach(async (flower) => {
+    for (const flower of flowers) {
         const insertQuery = {
             text: `INSERT INTO flowers
                    (slug, name, emoji, family, origin, bloom_season, color, description)
@@ -55,7 +55,7 @@ const seedFlowersTable = async () => {
 
             console.log(`✅ ${flower.name} added successfully`)
         })
-    })
+    }
 
     await pool.end()
 }
