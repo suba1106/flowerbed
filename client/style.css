@@ -159,18 +159,18 @@ main {
 .flower-details h2 {
   margin: 0 0 0.5rem;
   font-size: 2rem;
-  color: #1a1a2e;
+  color: #2d6a4f;
 }
 
 .flower-details p {
   margin: 0;
   font-size: 0.95rem;
-  color: #444;
+  color: white;
   line-height: 1.6;
 }
 
 #description {
   margin-top: 0.5rem;
-  color: #555;
+  color: #f0f0f0;
   line-height: 1.75;
 }
