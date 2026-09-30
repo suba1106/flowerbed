@@ -1,4 +1,5 @@
 import express from 'express'
+import './config/dotenv.js'
 import flowerRoutes from './routes/flowers.js'
 
 const app = express()
