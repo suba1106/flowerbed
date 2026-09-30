@@ -1,0 +1,63 @@
+import pool from './database.js'
+import './dotenv.js'
+import flowers from '../data/flowers.js'
+
+const createGiftsTable = async () => {
+    const createTableQuery = `
+    DROP TABLE IF EXISTS flowers;
+
+    CREATE TABLE IF NOT EXISTS flowers (
+        id SERIAL PRIMARY KEY,
+        slug VARCHAR(255) NOT NULL UNIQUE,
+        name VARCHAR(255) NOT NULL,
+        emoji VARCHAR(20) NOT NULL,
+        family VARCHAR(255) NOT NULL,
+        origin VARCHAR(255) NOT NULL,
+        bloom_season VARCHAR(255) NOT NULL,
+        color VARCHAR(255) NOT NULL,
+        description TEXT NOT NULL
+    )
+`
+try {
+    const res = await pool.query(createTableQuery)
+    console.log('Flowers table created successfully.')
+} catch (err) {
+    console.error('Error creating Flowers table:', err)
+}
+}
+
+const seedFlowersTable = async () => {
+    await createFlowersTable()
+
+    flowers.forEach(async (flower) => {
+        const insertQuery = {
+            text: `INSERT INTO flowers
+                   (slug, name, emoji, family, origin, bloom_season, color, description)
+                   VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`
+        }
+
+        const values = [
+            flower.slug,
+            flower.name,
+            flower.emoji,
+            flower.family,
+            flower.origin,
+            flower.bloomSeason,
+            flower.color,
+            flower.description
+        ]
+
+        pool.query(insertQuery, values, (err, res) => {
+            if (err) {
+                console.error('⚠️ error inserting flower', err)
+                return
+            }
+
+            console.log(`✅ ${flower.name} added successfully`)
+        })
+    })
+
+    await pool.end()
+}
+
+seedFlowersTable()
