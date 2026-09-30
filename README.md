@@ -31,6 +31,7 @@ Here's a walkthrough of implemented required features:
 
 <img src='projectDemo.mp4' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 <img src='render dashboard.mp4' title='renderDashboard'>
+<img src='tableShow.gif' title='Showing the table'>
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  GIF tool here
