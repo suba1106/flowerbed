@@ -47,14 +47,12 @@ const seedFlowersTable = async () => {
             flower.description
         ]
 
-        pool.query(insertQuery, values, (err, res) => {
-            if (err) {
-                console.error('⚠️ error inserting flower', err)
-                return
-            }
-
+        try {
+            await pool.query(insertQuery, values)
             console.log(`✅ ${flower.name} added successfully`)
-        })
+        } catch (err) {
+            console.error('⚠️ error inserting flower', err)
+        }
     }
 
     await pool.end()
