@@ -21,7 +21,7 @@ app.listen(PORT, () => {
 app.use('/flowers', flowerRoutes)
 
 app.get('/flowers/:slug', (req, res) => {
-  res.sendFile('flower.html', { root: '../client/public' })
+  res.sendFile('flowers.html', { root: '../client/public' })
 })
 
 app.get('{*path}', (req, res) => {

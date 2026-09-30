@@ -3,7 +3,7 @@ const renderFlowers = async () => {
     const data = await response.json()
 
     const mainContent = document.getElementById('main-content')
-    if (data) {
+    if (data && data.length > 0) {
         data.map(flower => {
             const card = document.createElement('div')
             card.classList.add('card')
@@ -33,7 +33,7 @@ const renderFlowers = async () => {
             const link = document.createElement('a')
             link.textContent = 'Read More >'
             link.setAttribute('role', 'button')
-            link.href = `/flower.html?slug=${flower.slug}`
+            link.href = `/flowers.html?slug=${flower.slug}`
             bottomContainer.appendChild(link)
 
             card.appendChild(topContainer)
